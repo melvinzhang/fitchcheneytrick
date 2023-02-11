@@ -8,7 +8,6 @@
 
 var VALUES = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 var SUITS = ['D', 'C', 'H', 'S'];
-var PI = '31415926535897932384626433';
 var i = 0;
 var submit = true;
 
@@ -140,9 +139,7 @@ function jumble(arr, num) {
 }
 
 function getKeyIndex() {
-	var index = PI.substring(i, i + 1);
-	i += 1;
-	return parseInt(index) % 4;
+    return 0;
 }
 
 function getValue(card) {
