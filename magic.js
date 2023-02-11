@@ -64,7 +64,7 @@ function performMagic(one, two, three, four, five) {
 	var mystery = [];
 
 	cards.sort(function(a, b) {
-		return getStrength(a) - getStrength(b);
+		return getSuitOrder(a) - getSuitOrder(b);
 	});
 
 	for (var i = 0; i < cards.length - 1; i++) {
@@ -166,4 +166,11 @@ function getStrength(card) {
 		return null;
 	}
 	return ((VALUES.indexOf(getValue(card)) + 1) * (SUITS.length + 1)) + (SUITS.indexOf(getSuit(card)) + 1);
+}
+
+function getSuitOrder(card) {
+	if (SUITS.indexOf(getSuit(card)) === -1 || VALUES.indexOf(getValue(card)) === -1) {
+		return null;
+	}
+	return ((SUITS.indexOf(getSuit(card)) + 1) * (VALUES.length + 1)) + (VALUES.indexOf(getValue(card)) + 1);
 }
