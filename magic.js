@@ -165,5 +165,5 @@ function getStrength(card) {
 	if (SUITS.indexOf(getSuit(card)) === -1 || VALUES.indexOf(getValue(card)) === -1) {
 		return null;
 	}
-	return ((SUITS.indexOf(getSuit(card)) + 1) * (VALUES.length + 1)) + (VALUES.indexOf(getValue(card)) + 1);
+	return ((VALUES.indexOf(getValue(card)) + 1) * (SUITS.length + 1)) + (SUITS.indexOf(getSuit(card)) + 1);
 }
